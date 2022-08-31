@@ -1,10 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import "./contact.css"
 import { MdOutlineEmail } from 'react-icons/md'
 import { BsWhatsapp } from 'react-icons/bs'
+import swal from 'sweetalert'
 
 const Contact = () => {
+  const [errors, setErrors] = useState({})
+  const [text, enableButton] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleTextChange = (e) => {
+    e.preventDefault()
+    enableButton({
+      ...text,
+      [e.target.name]: e.target.value
+    });
+    setErrors(validate({
+      ...text,
+      [e.target.name]: e.target.value
+    }))
+  };
+
+  const validate = (value) => {
+    let error = {}
+    if (!value.email) error.email = 'Email requerido.'
+    else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value.email)) error.email = 'El email introducido es invalido.'
+    if (!value.name) error.name = 'Nombre requerido.'
+    else if (/ ^ [a-zA-Z] + [a-zA-Z] + $ /.test(value)) error.name = 'Debe ingresar un nombre valido'
+    if (!value.message) error.message = 'Debe ingresar un mensaje'
+    return error
+  }
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -14,6 +44,11 @@ const Contact = () => {
 
     e.target.reset();
   };
+
+  //alert
+  const messageSent = () => {
+    swal("¡Su mensaje ha sido enviado satisfactoriamente!")
+  }
 
   return (
     <section id='contact'>
@@ -37,10 +72,10 @@ const Contact = () => {
         </div>
         {/* END OF CONTACT OPTIONS */}
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name='name' placeholder='Su nombre completo' required />
-          <input type="text" name='email' placeholder='Su correo electrónico' required />
-          <textarea name="message" rows="7" placeholder='Su mensaje'></textarea>
-          <button type='submit' className='btn btn-primary'>Enviar mensaje</button>
+          <input type="text" name='name' placeholder='Su nombre completo' value={text.name} onChange={e => handleTextChange(e)} /> {errors.name && (<p>{errors.name}</p>)}
+          <input type="text" name='email' placeholder='Su correo electrónico' value={text.email} onChange={e => handleTextChange(e)} /> {errors.email && (<p>{errors.email}</p>)}
+          <textarea name="message" rows="7" placeholder='Su mensaje' value={text.message} onChange={e => handleTextChange(e)} ></textarea> {errors.message && (<p>{errors.message}</p>)}
+          <button type='submit' className='btn btn-primary' disabled={errors.name || errors.email || errors.message} onClick={messageSent}>Enviar mensaje</button>
         </form>
       </div>
     </section>

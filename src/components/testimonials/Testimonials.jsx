@@ -1,9 +1,9 @@
 import React from 'react'
 import "./testimonials.css"
-import AVTR1 from '../../assets/avatar1.jpg'
-import AVTR2 from '../../assets/avatar2.jpg'
-import AVTR3 from '../../assets/avatar3.jpg'
-import AVTR4 from '../../assets/avatar4.jpg'
+import AVTR1 from '../../assets/nacho.jpeg'
+import AVTR2 from '../../assets/isma.jpeg'
+import AVTR3 from '../../assets/santi.jfif'
+import AVTR4 from '../../assets/mari.jpeg'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGithub } from 'react-icons/bs'
 import { BsBriefcase } from 'react-icons/bs'
@@ -30,7 +30,7 @@ const data = [
   {
     avatar: AVTR2,
     coworker: 'Ismael Enriquez',
-    review: 'Gracias al desempeño y al conocimiento de Matias logramos terminar cada sprint a tiempo, como compañero escucha y propone ideas, una persona proactiva nunca se queda quieto, excelente compañero y amigo.',
+    review: 'Gracias al desempeño y al conocimiento de Matias logramos terminar cada sprint a tiempo, como compañero escucha y propone ideas, una persona proactiva que nunca se queda quieto, excelente compañero y amigo.',
     linkedin: 'https://www.linkedin.com/in/david-ismael-enriquez/',
     github: 'https://github.com/Ismanaos',
     portfolio: 'https://portofolio-ismanaos.vercel.app/'
@@ -38,12 +38,16 @@ const data = [
   {
     avatar: AVTR3,
     coworker: 'Santiago Alamos',
-    review: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque facere voluptates earum, possimus et incidunt at dolorem molestias perspiciatis modi optio natus ducimus maxime commodi eos, nostrum molestiae sunt voluptatum.'
+    review: 'El trabajo con Mati fue muy ameno tanto en sentido técnico como a nivel social: es paciente y comunicativo. Supo resolver tareas nuevas en poco tiempo adaptándose a las necesidades. En conjunto con él realizamos varios análisis de código existente para adaptarlos a nuestro trabajo. También logramos debatir ideas y resolver necesidades de forma optimizada. Fue una buena experiencia trabajar juntos.',
+    linkedin: "https://www.linkedin.com/in/santiago-alamos-servian",
+    github: "https://github.com/santi-misael21"
   },
   {
     avatar: AVTR4,
     coworker: 'Mariana Rionda',
-    review: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque facere voluptates earum, possimus et incidunt at dolorem molestias perspiciatis modi optio natus ducimus maxime commodi eos, nostrum molestiae sunt voluptatum.'
+    review: 'Tuve la oportunidad de trabajar con Matías en el proyecto grupal del bootcamp de Henry y estuvo siempre atento para ayudar en lo que nos hiciera falta, investigar todo lo que no sabíamos como resolver y trabajar para crear un proyecto muy lindo. Es muy buen compañero, responsable y tranquilo. Siempre busca la solución a los obstáculos, y se preocupa porque todos queden conformes con el resultado final.',
+    linkedin: 'https://www.linkedin.com/in/marianarociorionda/',
+    github: 'https://github.com/MariRionda'
   }
 ]
 
@@ -73,7 +77,7 @@ const Testimonials = () => {
                 <div className="coworker__social_networks">
                   <a href={linkedin} target='_blank'><BsLinkedin /></a>
                   <a href={github} target='_blank'><BsGithub /></a>
-                  <a href={portfolio} target='_blank'><BsBriefcase /></a>
+                  {portfolio ? <a href={portfolio} target='_blank'><BsBriefcase /></a> : null}
                 </div>
               </SwiperSlide>
             )

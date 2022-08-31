@@ -1,47 +1,37 @@
 import React from 'react'
 import "./portfolio.css"
-import IMG1 from '../../assets/portfolio1.jpg'
-import IMG2 from '../../assets/portfolio2.jpg'
-import IMG3 from '../../assets/portfolio3.jpg'
-import IMG4 from '../../assets/portfolio4.jpg'
-import IMG5 from '../../assets/portfolio5.png'
-import IMG6 from '../../assets/portfolio6.jpg'
+import IMG1 from '../../assets/ondrive.jpeg'
+import IMG3 from '../../assets/wheaterApp.png'
+import IMG4 from '../../assets/my-portfolio.jpeg'
 
 const data = [
   {
     id: 1,
     image: IMG1,
     title: 'On Drive - Proyecto grupal',
-    github: 'http://github.com',
-    deploy: 'http://github.com'
+    github: 'https://github.com/NachoPasser/OnDrive',
+    deploy: 'https://on-drive.vercel.app'
   },
   {
     id: 2,
-    image: IMG2,
+    image: "https://indiehoy.com/wp-content/uploads/2020/09/high-score.jpg",
     title: 'Videojuegos - Proyecto individual',
-    github: 'http://github.com',
-    deploy: 'http://github.com'
+    github: 'https://github.com/MatiasPereson/PI-Videogames',
+    deploy: 'https://pi-videogames-matias-pereson.vercel.app/'
   },
   {
     id: 3,
     image: IMG3,
-    title: 'Paises - Proyecto individual',
-    github: 'http://github.com',
-    deploy: 'http://github.com'
+    title: 'Clima - Proyecto individual',
+    github: 'https://github.com/MatiasPereson/WeatherApp',
+    deploy: 'https://weather-app-matias-pereson.vercel.app/'
   },
   {
     id: 4,
     image: IMG4,
-    title: 'Pokemon - Proyecto individual',
-    github: 'http://github.com',
-    deploy: 'http://github.com'
-  },
-  {
-    id: 5,
-    image: IMG5,
-    title: 'Clima - Proyecto individual',
-    github: 'http://github.com',
-    deploy: 'http://github.com'
+    title: 'Portfolio - Proyecto individual',
+    github: 'https://github.com/MatiasPereson/Portfolio',
+    deploy: 'https://portfolio-matias-pereson.vercel.app/'
   }
 ]
 
