@@ -55,6 +55,13 @@ textarea {
     color: var(--color-white);
 }
 
+.btn-primary:disabled {
+    cursor: not-allowed;
+    pointer-events: inherit;
+    outline: 0;
+    opacity: initial;
+}
+
 /* ============== MEDIA QUERIES (MEDIUM DEVICES) ============== */
 @media screen and (max-width: 1024px) {
     .container.contact__container {

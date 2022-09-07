@@ -75,7 +75,7 @@ const Contact = () => {
           <input type="text" name='name' placeholder='Su nombre completo' value={text.name} onChange={e => handleTextChange(e)} /> {errors.name && (<p>{errors.name}</p>)}
           <input type="text" name='email' placeholder='Su correo electrónico' value={text.email} onChange={e => handleTextChange(e)} /> {errors.email && (<p>{errors.email}</p>)}
           <textarea name="message" rows="7" placeholder='Su mensaje' value={text.message} onChange={e => handleTextChange(e)} ></textarea> {errors.message && (<p>{errors.message}</p>)}
-          <button type='submit' className='btn btn-primary' disabled={errors.name || errors.email || errors.message} onClick={messageSent}>Enviar mensaje</button>
+          <button type='submit' className='btn btn-primary' disabled={!text.name || !text.email || !text.message || errors.name || errors.email || errors.message} onClick={messageSent}>Enviar mensaje</button>
         </form>
       </div>
     </section>
