@@ -23,24 +23,27 @@ const About = () => {
             <article className='about__card'>
               <FaAward className='about__icon' />
               <h5>Experiencia</h5>
-              <small>+8 meses desarrollando</small>
+              <small>+2 años desarrollando</small>
             </article>
 
             <article className='about__card'>
               <BsHourglassSplit className='about__icon' />
               <h5>Horas de aprendizaje</h5>
-              <small>+1000 hs</small>
+              <small>+20.000 hs</small>
             </article>
 
             <article className='about__card'>
               <VscFolderLibrary className='about__icon' />
               <h5>Proyectos</h5>
-              <small>+4 completados</small>
+              <small>+8 completados</small>
             </article>
           </div>
 
           <p>
-            ¡Hola! me llamo Matías Julián Pereson, soy desarrollador web full stack, con pasión hacia el frontend. Realice un curso de +800 hs en Henry. Además, asistí a la carrera de Licenciatura en Sistemas de Información, en la UNNE (Universidad Nacional del Nordeste). Actualmente estoy en búsqueda de mi primer experiencia laboral en el mundo IT, para poder crecer personal y profesionalmente, aprendiendo día a día un poco mas. Mi sueño es hacer carrera y convertirme en un desarrollador experto, capaz de liderar equipos y ayudar a los demás a mejorar.
+            ¡Hola! me llamo Matías Julián Pereson, soy desarrollador web full stack hace +2 años, con pasión hacia el frontend.
+            Asistí a la carrera de Licenciatura en Sistemas de Información, en la UNNE (Universidad Nacional del Nordeste).
+            Actualmente me desempeño como desarrollador en 2 proyectos, donde realizo nuevas funcionalidades de punta a punta, mantenimiento y optimización de código, configuraciones de devops, entre otras cosas.
+            Mi sueño es hacer carrera y convertirme en un desarrollador experto, capaz de liderar equipos y ayudar a los demás a mejorar.
           </p>
 
           <a href="#contact" className='btn btn-primary'>Contactar</a>
